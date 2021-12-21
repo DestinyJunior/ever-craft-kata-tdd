@@ -41,5 +41,12 @@ describe("Character",  () =>{
             character.alignment = alignment
             expect(character.alignment).toBe(alignment);
         })
+
+        // reject invalid alignment
+        it("reject non default values for alignment", () => {
+            expect(() => {
+                character.alignment = "Wicked"
+            }).toThrow("Wicked is not a valid Alignment");
+        })
     })
 })

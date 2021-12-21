@@ -3,6 +3,7 @@
  *      Has a name
  *      Has Alignments ['Good', 'Evil', 'Natural']
  */
+const DEFAULTS_ALiGNMENTS = ['Good', 'Neutral', 'Evil'];
 class Character {
 
     constructor(){
@@ -23,6 +24,7 @@ class Character {
 
     // set alignment
     set alignment(alignment){
+        if(!DEFAULTS_ALiGNMENTS.includes(alignment)) throw `${alignment} is not a valid Alignment`
         this._alignment = alignment
     }
 }
