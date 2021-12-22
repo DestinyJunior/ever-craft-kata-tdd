@@ -2,13 +2,13 @@ const { Character }  = require('../index');
 
 
 // describe character
-describe("Character",  () =>{ 
+describe("Character",  () => { 
 
     let character;
     const characterName = "";
 
     beforeEach(() => {
-        character = new Character()
+        character = new Character("")
     });
 
     describe("character name", () => {
@@ -47,6 +47,18 @@ describe("Character",  () =>{
             expect(() => {
                 character.alignment = "Wicked"
             }).toThrow("Wicked is not a valid Alignment");
+        })
+    })
+
+    // test for armor class
+    describe("Armor class test", () => {
+
+        it("Has default armor class 10", () => {
+            expect(character.armorClass).toBe(10)
+        })
+
+        it("Has hit point of 5", () => {
+            expect(character.hitPoints).toBe(5)
         })
     })
 })
